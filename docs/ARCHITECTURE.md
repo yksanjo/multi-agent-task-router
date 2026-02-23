@@ -1,19 +1,17 @@
 # Architecture
 
-## Goal
+## Purpose
 
-Routing and scheduling layer for distributing work across specialized agents.
+multi-agent-task-router evaluates agent execution signals and tool outcomes to improve autonomy safety and quality.
 
-## Core Components
+## Components
 
-1. Ingress interface for requests and task metadata
-2. Policy and validation layer for deterministic control
-3. Domain service core for business logic execution
-4. Output adapters for events, persistence, and telemetry
+- Signal intake layer
+- Assessment engine
+- Output formatter for downstream automation
 
-## Design Notes
+## Runtime Flow
 
-- Keep core logic deterministic and side-effect aware.
-- Emit structured telemetry for every execution path.
-- Make policy decisions explicit and auditable.
-- Separate contract definitions from runtime adapters.
+1. Receive signal text/event.
+2. Compute deterministic risk score.
+3. Emit structured assessment result.
